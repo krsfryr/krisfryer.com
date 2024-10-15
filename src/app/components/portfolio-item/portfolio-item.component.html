@@ -1,0 +1,16 @@
+<div class="project-card project-image" style="background-image:url('https://yuhsuanlin.s3.us-east-2.amazonaws.com/illustration+1.png')">
+    <div class="content-wrapper">
+        <div *ngIf="project.subtitle" class="header-pre">{{ project.subtitle }}</div>
+        <div class="header">{{ project.name }}</div>
+        <div *ngIf="project.summary" class="content">
+            <p class="card-text">{{ project.summary }}</p>
+        </div>
+        <div *ngIf="project.tags" class="tags d-flex flex-wrap">
+            <div *ngFor="let tag of project.tags">
+                <div class="tag">{{ tag }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="project-image"></div>
+    <a class="project-link" href="{{project.viewMoreSrc}}"></a>
+</div>

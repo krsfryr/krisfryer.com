@@ -1,0 +1,98 @@
+@use 'sass:color';
+@import url('//fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&display=swap');
+@import 'app';
+
+html {
+    font-size: 62.5%;
+    font-optical-sizing: auto;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: .025rem;
+    line-height: var(--global--line-height-body);
+}
+
+main, footer, .footer {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 168rem;
+}
+
+footer, .footer {
+    padding: var(--p-sm) var(--p-lg);
+
+    @include screen(lg) {
+        padding: var(--p-md) var(--p-xl);
+    }
+}
+
+.hero {
+    padding: var(--p-xl) var(--p-lg);
+    display: flex;
+    align-items: center;
+
+    h1 {
+        max-width: 102.4rem;
+        font-size: $h1-mobile;
+    }
+    
+    @include screen(lg) {
+        padding: var(--p-xl) var(--p-xl);
+
+        h1 {
+            font-size: 5.2rem;
+        }
+    }
+}
+
+.section {
+    padding: $global-section-padding--desktop;
+
+    @include screen(lg) {
+        padding: $global-section-padding--m-lg;
+    }
+}
+
+.listing-hero {
+    flex-direction: column;
+
+    .header-pre {
+        color: $gray-700;
+        font-weight: var(--font-weight--400);
+        font-size: $headings-pre-font-size;
+        text-transform: $headings-text-transform;
+    }
+}
+
+.listing-section, .listing-section-full {
+    h1 {
+        max-width: 102.4rem;
+    }
+}
+
+.listing-section {
+    padding: var(--p-xl) var(--p-lg);
+    
+    @include screen(lg) {
+        padding: var(--p-xl) var(--p-xl);
+    }
+}
+
+.listing-section-full {
+    padding: var(--p-xl) 0;
+
+    > .listing-section  {
+        padding: 0 var(--p-lg);
+    }
+    
+    @include screen(lg) {
+        padding: var(--p-xl) 0;
+
+        > .listing-section  {
+            padding: 0 var(--p-xl);
+        }
+    }
+}

@@ -1,0 +1,70 @@
+@import "/src/styles.scss";
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 2rem;
+    border-radius: 1.2rem;
+    background: #F1EFED;
+    border: 0;
+    padding: var(--p-lg);
+    text-transform: lowercase;
+    position: relative;
+
+    @include screen(md) {
+        grid-template-columns: 1fr 1fr;
+        padding: var(--p-xl);
+    }
+
+    .card-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        
+        @include screen(md) {
+            font-size: 3.2rem;
+        }
+    }
+
+    .card-pre-title {
+        opacity: .75;
+        font-size: 90%;
+        font-weight: 500;
+    }
+
+    .card-text {
+        margin-bottom: 4rem;
+        font-size: 1.8rem;
+        
+        @include screen(md) {
+            font-size: 2rem;
+        }
+    }
+    
+    .tags {
+        grid-area: tags;
+        gap: var(--p-sm);
+        margin-top: 2rem;
+
+        .tag {
+            color: #4f5554;
+            background: var(--tag-brand);
+            padding: var(--p-xxs) var(--p-sm);
+            border-radius: .6rem;
+            width: fit-content;
+            font-weight: 600;
+        }
+    }
+
+    &.project-image {
+        background: #F1EFED;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        padding-bottom: 60%;
+
+        @include screen(md) {
+            padding-bottom: var(--p-xl);
+        }
+    }
+}
