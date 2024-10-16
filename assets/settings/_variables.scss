@@ -1,0 +1,158 @@
+// Bootstrap Overrides : START
+$spacer:    1.6rem;
+
+// Bootstrap Overrides : END
+$prefix:                      kf- !default;
+
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+
+$blue:    #1F51FF !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #d63384 !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #198754 !default;
+$teal:    #20c997 !default;
+$cyan:    #0dcaf0 !default;
+
+
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "black":      $black,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+) !default;
+
+
+:root {
+    @each $color, $value in $colors {
+        --#{$prefix}#{$color}: #{$value};
+    }
+    --black:        #000;
+    --white:        #fff;
+    --dk-gray:      #232323;
+    --tag-brand:    #e2e3e8;
+    --anchor:       #1F51FF;
+
+    --p-xxs:        .4rem;
+    --p-xs:         .8rem;
+    --p-sm:         1.2rem;
+    --p-md:         1.6rem;
+    --p-lg:         3.2rem;
+    --p-xl:         6.4rem;
+    --p-xxl:        12.8rem;
+
+    --heading--font-weight: normal;
+    --heading--font-weight-page-title: 300;
+    --heading--font-weight-strong: 900;
+    --button--font-weight: 500;
+    --button--line-height: 1.5;
+    --button--border-width: 3px;
+    --button--border-radius: 0;
+    --button--padding-vertical: 15px;
+    --button--padding-horizontal: calc(2 * var(--button--padding-vertical));
+
+    --font-weight--300:     300;
+    --font-weight--400:     400;
+    --font-weight--500:     500;
+    --font-weight--600:     600;
+    --font-weight--700:     700;
+    --font-weight--800:     800;
+    --font-weight--900:     900;
+
+    --global--line-height-page-title: 1.1;
+    --global--line-height-heading: 1.1;
+    --quote--line-height-large: 1.2;
+    --global--line-height-body: 1.6;
+    --global--spacing-vertical: 3rem; 
+
+    --heading--line-height-h1: var(--global--line-height-page-title);
+    --heading--line-height-h2: var(--global--line-height-heading);
+    --heading--line-height-h3: var(--global--line-height-heading);
+    --heading--line-height-h4: var(--global--line-height-heading);
+    --heading--line-height-h5: var(--global--line-height-heading);
+    --heading--line-height-h6: var(--global--line-height-heading);
+}
+
+//Gloabl Text Styles
+$page-max-width:                144rem;
+$content-max-width:             70rem;
+$body-font-size:                1.8rem;
+$line-height-default:           1.7;
+$line-height-default-mobile:    1.25;
+$headings-text-transform:       initial;
+
+//Main Text Styles
+$h1-desktop:                7rem;
+$h2-desktop:                4rem;
+$h3-desktop:                2.875rem;
+$h4-desktop:                2.4rem;
+$h5-desktop:                2rem;
+$h6-desktop:                2rem;
+
+$h1-mobile:                 4rem;
+$h2-mobile:                 3.2rem;
+$h3-mobile:                 2.3rem;
+$h4-mobile:                 1.92rem;
+$h5-mobile:                 1.6rem;
+$h6-mobile:                 1.6rem;
+
+$title-desktop:             $h4-desktop;
+$title-mobile:              $h4-mobile;
+$subtitle:                  $h5-desktop;
+
+$listing-title--desktop:      5.6rem;
+$listing-title--mobile:       $h1-mobile;
+
+
+//About Page
+$about-h1-desktop:                2.8rem;
+$about-h2-desktop:                2.2rem;
+$about-h3-desktop:                1.8rem;
+
+$about-h1-mobile:                 4.8rem;
+$about-h2-mobile:                 2rem;
+$about-h3-mobile:                 1.8rem;
+
+
+//Portfolio Listing Page
+$listing-h2-desktop:        $h2-desktop;
+$listing-h2-mobile:         $h2-mobile;
+
+$headings-pre-font-size:    1.6rem;
+
+
+$card-v2-border-radius:     .8rem;
+$card-v2-padding:           2.4rem;
+
+
+// Global Site Padding
+$global-padding--desktop:           0 var(--p-lg) var(--p-lg);
+$global-padding--m-lg:              0 var(--p-xl) var(--p-xxl);
+
+$global-section-padding--desktop:   0 var(--p-lg);
+$global-section-padding--m-lg:      0 var(--p-xl);
