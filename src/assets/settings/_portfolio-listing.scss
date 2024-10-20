@@ -261,11 +261,12 @@ h2 + .listing-subsection {
         padding-bottom: 0;
     }
 
-    &.mp-tabs {
+    &.mp-tabs, &.col-spacing {
         h4, .h4
         h4:first-child, 
         .h4:first-child {
             margin-top: revert;
+
         }
     }
     
