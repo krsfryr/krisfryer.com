@@ -260,6 +260,14 @@ h2 + .listing-subsection {
     &:last-of-type {
         padding-bottom: 0;
     }
+
+    &.mp-tabs {
+        h4, .h4
+        h4:first-child, 
+        .h4:first-child {
+            margin-top: revert;
+        }
+    }
     
     img.img {
         padding: 2rem 0 3.2rem;
