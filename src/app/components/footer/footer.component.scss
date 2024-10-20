@@ -28,6 +28,10 @@
 .built {
     grid-area: built;
     text-align: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // gap: .4rem;
 }
 
 .made {
@@ -41,5 +45,23 @@
         height: auto;
         margin-left: 0.4rem;
         fill: var(--dk-gray);
+    }
+}
+
+.social-icons {
+    margin-left: .4rem;
+
+    a {
+        color: var(--dk-gray);
+    }
+
+    a:hover .icon-social, a:focus .icon-social {
+        color: var(--anchor);
+    }
+    
+    .icon-social {
+        width: 1.4rem;
+        height: 1.4rem;
+        fill: currentColor;
     }
 }

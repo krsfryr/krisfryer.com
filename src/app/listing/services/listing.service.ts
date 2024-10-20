@@ -13,7 +13,7 @@ export class ListingService {
       title: 'Impartner Marketplace',
       subtitle: 'Impartner',
       summary: 'This is a sample summary description.',
-      description: 'How might we create an engaging and easy-to-use applocation that gives users the ability to create and maintain their partner ecosystem?',
+      description: 'How might we create an engaging and easy-to-use application that gives users the ability to create and maintain their partner ecosystem?',
       link: 'work/impartner-marketplace',
       tags: ['Figma', 'MVP Design', 'Protyping', 'HTML', 'CSS', 'Mobile'],
       tagColor: 'tag-studio',
