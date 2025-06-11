@@ -9,28 +9,29 @@ a {
     &:hover {
         text-decoration: underline;
         text-decoration-style: dotted;
-        text-underline-offset: .3rem; 
+        text-underline-offset: .3rem;
     }
 }
 
 @include all-headings {
+    color: light-dark(var(--black), var(--colors-french-beige-100));
     font-weight: var(--heading--font-weight-strong);
     line-height: var(--global--line-height-heading);
-    letter-spacing: -0.01rem;
+    // letter-spacing: -0.01rem;
     text-transform: $headings-text-transform;
-    color: var(--dk-gray);
+    text-wrap-style: balance;
 }
 
 h1, .h1 {
     font-size: $h1-mobile;
     margin-top: var(--global--spacing-vertical);
     margin-bottom: var(--global--spacing-vertical);
-    letter-spacing: -.03em;
+    // letter-spacing: -.03em;
 
     &:first-of-type, &:first-child {
         margin-top: 0;
     }
-    
+
     @include screen(md) {
         font-size: $h1-desktop;
     }
@@ -41,12 +42,12 @@ h2, .h2 {
     line-height: var(--heading--line-height-h2);
     margin-top: calc(1* var(--global--spacing-vertical));
     margin-bottom: var(--global--spacing-vertical);
-    letter-spacing: -.01em;
+    // letter-spacing: -.01em;
 
     &:first-of-type, &:first-child {
         margin-top: 0;
     }
-    
+
     @include screen(md) {
         font-size: $h2-desktop;
     }
@@ -57,7 +58,7 @@ h3, .h3 {
     line-height: var(--heading--line-height-h3);
     margin-top: calc(1* var(--global--spacing-vertical));
     margin-bottom: var(--global--spacing-vertical);
-    letter-spacing: -.01em;
+    // letter-spacing: -.01em;
 
     &:first-of-type, &:first-child {
         margin-top: 0;
@@ -69,7 +70,7 @@ h4, .h4 {
     line-height: var(--heading--line-height-h4);
     margin-top: calc(1* var(--global--spacing-vertical));
     margin-bottom: var(--global--spacing-vertical);
-    letter-spacing: -.01em;
+    // letter-spacing: -.01em;
 
     &:first-of-type, &:first-child {
         margin-top: 0;
@@ -81,7 +82,7 @@ h5, .h5 {
     line-height: var(--heading--line-height-h5);
     margin-top: calc(1* var(--global--spacing-vertical));
     margin-bottom: var(--global--spacing-vertical);
-    letter-spacing: -.01em;
+    // letter-spacing: -.01em;
 
     &:first-of-type, &:first-child {
         margin-top: 0;
@@ -94,25 +95,25 @@ h6, .h6 {
     line-height: var(--heading--line-height-h6);
     margin-top: calc(1* var(--global--spacing-vertical));
     margin-bottom: var(--global--spacing-vertical);
-    letter-spacing: -.01em;
+    // letter-spacing: -.01em;
 
     &:first-of-type, &:first-child {
         margin-top: 0;
     }
 }
 
-img ~ h1, img ~ .h1, 
-img ~ h2, img ~ .h2, 
-img ~ h3, img ~ .h3, 
-img ~ h4, img ~ .h4, 
-img ~ h5, img ~ .h5, 
-img ~ h6, img ~ .h6, 
-.takeaway-visual ~ h1, .takeaway-visual ~ .h1, 
-.takeaway-visual ~ h2, .takeaway-visual ~ .h2, 
-.takeaway-visual ~ h3, .takeaway-visual ~ .h3, 
-.takeaway-visual ~ h4, .takeaway-visual ~ .h4, 
-.takeaway-visual ~ h5, .takeaway-visual ~ .h5, 
-.takeaway-visual ~ h6, .takeaway-visual ~ .h6 
+img ~ h1, img ~ .h1,
+img ~ h2, img ~ .h2,
+img ~ h3, img ~ .h3,
+img ~ h4, img ~ .h4,
+img ~ h5, img ~ .h5,
+img ~ h6, img ~ .h6,
+.takeaway-visual ~ h1, .takeaway-visual ~ .h1,
+.takeaway-visual ~ h2, .takeaway-visual ~ .h2,
+.takeaway-visual ~ h3, .takeaway-visual ~ .h3,
+.takeaway-visual ~ h4, .takeaway-visual ~ .h4,
+.takeaway-visual ~ h5, .takeaway-visual ~ .h5,
+.takeaway-visual ~ h6, .takeaway-visual ~ .h6
 {
 
     &:first-of-type, &:first-child {
@@ -168,7 +169,7 @@ hr {
 
 .grid {
     display: grid;
-    gap: 2.4rem;
+    gap: 4.8rem 2.4rem;
 
     &-2-col {
         grid-template-columns: 1fr;
@@ -222,3 +223,4 @@ hr {
 .br-1 {
     border-radius: 1rem;
 }
+

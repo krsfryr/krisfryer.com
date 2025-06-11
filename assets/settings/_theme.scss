@@ -1,0 +1,22 @@
+/* styles.css or global styles */
+html[data-theme='dark'] {
+  color-scheme: dark;
+  font-weight: var(--body-font-weight-dark);
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+  font-weight: var(--body-font-weight-light);
+}
+
+html[data-theme='dark'] body {
+  font-weight: var(--body-font-weight-dark);
+}
+
+html[data-theme='light'] body {
+  font-weight: var(--body-font-weight-light);
+}
+
+html:has(:target) {
+  scroll-behavior: smooth;
+}

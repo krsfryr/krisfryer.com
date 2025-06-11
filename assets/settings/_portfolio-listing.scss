@@ -10,12 +10,12 @@
     background: $black;
     padding-top: 13.2vmax;
     padding-bottom: 10vw;
-    
+
     @include screen(md) {
         padding-top: 10.2vmax;
         padding-bottom: 4vw;
     }
-    
+
     .listing-title {
         max-width: $page-max-width;
         margin: auto;
@@ -33,7 +33,7 @@
             @include screen(md) {
                 font-size: $listing-title--desktop;
             }
-        }   
+        }
 
         .header-pre {
             color: $gray-300;
@@ -61,7 +61,7 @@
             margin-bottom: 0;
 
             strong {
-                font-weight: 900;
+                font-weight: var(--font-weight--600);
             }
         }
 
@@ -87,7 +87,7 @@
         margin-top: 0;
         padding-top: 0;
     }
-    
+
     @include screen(lg) {
         grid-template-columns: 1.15fr 1fr;
         padding: 0 var(--p-xl);
@@ -109,23 +109,23 @@
         @include screen(md) {
             font-size: $listing-title--desktop;
         }
-    }  
+    }
 }
 
 .listing-image {
     max-width: 20rem;
     margin: 2rem auto 0;
     padding-top: 2rem;
-    
+
     @include screen(sm) {
         max-width: 30rem;
     }
-    
+
     @include screen(md) {
         max-width: 115rem;
         padding-top: 5rem;
     }
-    
+
 }
 
 .listing-title {
@@ -137,7 +137,7 @@
         @include screen(md) {
             font-size: $listing-title--desktop;
         }
-    }  
+    }
 
     .header-pre {
         font-size: 1.3rem;
@@ -166,7 +166,7 @@
 
     h2 {
         font-size: $listing-h2-mobile;
-        
+
         @include screen(md) {
             font-size: $listing-h2-desktop;
         }
@@ -177,7 +177,7 @@
         margin-top: calc(2* var(--global--spacing-vertical));
     }
 
-    
+
     .listing-role {
 
         .role-section {
@@ -187,7 +187,7 @@
         h2 {
             font-size: $h3-mobile;
             margin-top: 0;
-            
+
             @include screen(md) {
                 font-size: $h3-desktop;
             }
@@ -205,13 +205,13 @@
     }
 
     .listing-software {
-        
+
         ul {
             display: flex;
             flex-direction: row;
             gap: 2rem;
         }
-        
+
         ul > li {
             display: flex;
             width: 100%;
@@ -236,7 +236,7 @@
         }
     }
 
-    p + ul, 
+    p + ul,
     p + ol {
         margin-top: var(--p-lg);
     }
@@ -263,16 +263,16 @@ h2 + .listing-subsection {
 
     &.mp-tabs, &.col-spacing {
         h4, .h4
-        h4:first-child, 
+        h4:first-child,
         .h4:first-child {
             margin-top: revert;
 
         }
     }
-    
+
     img.img {
         padding: 2rem 0 3.2rem;
-        
+
         @include screen(md) {
             padding: 0;
         }
@@ -287,7 +287,7 @@ h2 + .listing-subsection {
     @include screen(md) {
         grid-template-columns: repeat(1, 1fr) 22rem;
         gap: 20.2rem;
-        
+
     }
 }
 
@@ -298,7 +298,7 @@ h2 + .listing-subsection {
     border-radius: 2rem;
     color: #002d71;
     box-shadow: var(--bs-box-shadow-sm);
-    
+
     @include screen(md) {
         gap: 3.6rem;
 
@@ -322,7 +322,7 @@ h2 + .listing-subsection {
     &-icon {
         display: none;
         fill: currentColor;
-        
+
         @include screen(md) {
             display:block;
             width: 4.8rem;
@@ -335,7 +335,7 @@ h2 + .listing-subsection {
         font-size: 1.8rem;
         line-height: 1.75;
         font-weight: 700;
-        
+
         @include screen(md) {
             font-size: 2rem;
         }
@@ -343,17 +343,17 @@ h2 + .listing-subsection {
 }
 
 .takeaway {
-    
+
     &-visual {
         display: flex;
         justify-content: center;
         padding: 2rem;
     }
-    
+
     &-circle {
         width: 20rem;
         height: 20rem;
-        background: var(--bs-gray-300);
+        background: light-dark(var(--bs-gray-300), var(--bs-gray-800));
         border-radius: 100rem;
         padding: 5rem;
 
@@ -362,29 +362,29 @@ h2 + .listing-subsection {
 
 .listing-grid {
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
         'ga-title'
         'ga-image'
         'ga-body'
     ;
     grid-auto-rows: auto;
     gap: 0;
-    
+
     @include screen(md) {
         grid-template-columns: 1.35fr 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             'ga-image ga-title'
             'ga-image ga-body'
         ;
         grid-auto-rows: auto 1fr;
         gap: 0 3.2rem;
-    
+
     }
 
     &.reversed {
         @include screen(md) {
             grid-template-columns: 1fr 1.35fr;
-            grid-template-areas: 
+            grid-template-areas:
                 'ga-title ga-image'
                 'ga-body ga-image'
             ;

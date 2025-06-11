@@ -48,54 +48,148 @@ $colors: (
 ) !default;
 
 
+
 :root {
-    @each $color, $value in $colors {
-        --#{$prefix}#{$color}: #{$value};
-    }
-    --black:        #000;
-    --white:        #fff;
-    --dk-gray:      #232323;
-    --tag-brand:    #e2e3e8;
-    --anchor:       #1F51FF;
 
-    --p-xxs:        .4rem;
-    --p-xs:         .8rem;
-    --p-sm:         1.2rem;
-    --p-md:         1.6rem;
-    --p-lg:         3.2rem;
-    --p-xl:         6.4rem;
-    --p-xxl:        12.8rem;
+  // color-scheme: light dark;
 
-    --heading--font-weight: normal;
-    --heading--font-weight-page-title: 300;
-    --heading--font-weight-strong: 900;
-    --button--font-weight: 500;
-    --button--line-height: 1.5;
-    --button--border-width: 3px;
-    --button--border-radius: 0;
-    --button--padding-vertical: 15px;
-    --button--padding-horizontal: calc(2 * var(--button--padding-vertical));
+  @each $color,
+  $value in $colors {
+    --#{$prefix}#{$color}: #{$value};
+  }
 
-    --font-weight--300:     300;
-    --font-weight--400:     400;
-    --font-weight--500:     500;
-    --font-weight--600:     600;
-    --font-weight--700:     700;
-    --font-weight--800:     800;
-    --font-weight--900:     900;
+  --black: #000;
+  --white: #fff;
+  --dk-gray: #232323;
+  --tag-brand: #e2e3e8;
+  // --anchor: #1F51FF;
 
-    --global--line-height-page-title: 1.1;
-    --global--line-height-heading: 1.1;
-    --quote--line-height-large: 1.2;
-    --global--line-height-body: 1.6;
-    --global--spacing-vertical: 3rem; 
+  --p-xxs: .4rem;
+  --p-xs: .8rem;
+  --p-sm: 1.2rem;
+  --p-md: 1.6rem;
+  --p-lg: 3.2rem;
+  --p-xl: 6.4rem;
+  --p-xxl: 12.8rem;
 
-    --heading--line-height-h1: var(--global--line-height-page-title);
-    --heading--line-height-h2: var(--global--line-height-heading);
-    --heading--line-height-h3: var(--global--line-height-heading);
-    --heading--line-height-h4: var(--global--line-height-heading);
-    --heading--line-height-h5: var(--global--line-height-heading);
-    --heading--line-height-h6: var(--global--line-height-heading);
+  --heading--font-weight: normal;
+  --heading--font-weight-page-title: 300;
+  --heading--font-weight-strong: 700;
+  --button--font-weight: 500;
+  --button--line-height: 1.5;
+  --button--border-width: 3px;
+  --button--border-radius: 0;
+  --button--padding-vertical: 15px;
+  --button--padding-horizontal: calc(2 * var(--button--padding-vertical));
+
+  --font-weight--300: 300;
+  --font-weight--400: 400;
+  --font-weight--500: 500;
+  --font-weight--600: 600;
+  --font-weight--700: 700;
+  --font-weight--800: 800;
+  --font-weight--900: 900;
+
+  --uppercase: uppercase;
+  --lowercase: lowercase;
+  --capitalize: capitalize;
+  --normal: normal;
+  --text-transform: none;
+  --text-decoration: none;
+  --text-decoration-underline: underline;
+
+  --global--line-height-page-title: 1.1;
+  --global--line-height-heading: 1.1;
+  --quote--line-height-large: 1.2;
+  --global--line-height-body: 1.6;
+  --global--spacing-vertical: 3rem;
+
+  --heading--line-height-h1: var(--global--line-height-page-title);
+  --heading--line-height-h2: var(--global--line-height-heading);
+  --heading--line-height-h3: var(--global--line-height-heading);
+  --heading--line-height-h4: var(--global--line-height-heading);
+  --heading--line-height-h5: var(--global--line-height-heading);
+  --heading--line-height-h6: var(--global--line-height-heading);
+
+
+  // 2025 Updates - Dark Mode
+  --light-bg: #fff;
+  --light-color: #1d1d1f;
+
+  --dark-bg: #0F0F12;
+  // --dark-color: #fff;
+  --dark-color: var(--colors-timberwolf-100, #f7f6f3);
+
+  /* COLLECTION 1 */
+  --surface-background-dark: #191a17;
+  --surface-background-light: #ffffff;
+  --surface-background-double-dark: #0f0f12;
+
+  --dark-slate-grey: #2c3639;
+  --limed-spruce: #3f4e4f;
+  --french-beige: #a27b5c;
+  --timberwolf: #dcd7c9;
+  --boulder: #727d73;
+  --mountbatten-pink: #987d9a;
+
+  --hyperlink: #1861FF;
+
+  --colors-dark-slate-grey-800: #2c3639;
+  --colors-dark-slate-grey-700: #435256;
+  --colors-dark-slate-grey-600: #596d73;
+  --colors-dark-slate-grey-500: #6f8890;
+  --colors-dark-slate-grey-400: #8ca0a6;
+  --colors-dark-slate-grey-300: #a9b8bc;
+  --colors-dark-slate-grey-200: #c6d0d2;
+  --colors-dark-slate-grey-100: #e2e7e8;
+
+  --colors-limed-spruce-800: #3f4e4f;
+  --colors-limed-spruce-700: #566a6c;
+  --colors-limed-spruce-600: #6d8688;
+  --colors-limed-spruce-500: #889ea0;
+  --colors-limed-spruce-400: #a4b5b7;
+  --colors-limed-spruce-300: #c0cccd;
+  --colors-limed-spruce-200: #dde3e4;
+  --colors-limed-spruce-100: #f1f3f4;
+
+  --colors-french-beige-800: #624a38;
+  --colors-french-beige-700: #82634a;
+  --colors-french-beige-600: #a27b5c;
+  --colors-french-beige-500: #b5967d;
+  --colors-french-beige-400: #c7b09d;
+  --colors-french-beige-300: #dacbbe;
+  --colors-french-beige-200: #ece5de;
+  --colors-french-beige-100: #f6f2ef;
+
+  --colors-timberwolf-800: #665d42;
+  --colors-timberwolf-700: #857956;
+  --colors-timberwolf-600: #a1936d;
+  --colors-timberwolf-500: #b5aa8c;
+  --colors-timberwolf-400: #c9c1ab;
+  --colors-timberwolf-300: #dcd7c9;
+  --colors-timberwolf-200: #f1efe9;
+  --colors-timberwolf-100: #f7f6f3;
+
+  --colors-mountbatten-pink-800: #634e64;
+  --colors-mountbatten-pink-700: #7f6481;
+  --colors-mountbatten-pink-600: #987d9a;
+  --colors-mountbatten-pink-500: #af9bb1;
+  --colors-mountbatten-pink-400: #c6b7c7;
+  --colors-mountbatten-pink-300: #ddd4de;
+  --colors-mountbatten-pink-200: #eae5eb;
+  --colors-mountbatten-pink-100: #f6f3f6;
+
+  --body-font-weight: light-dark(400, 300);
+  --body-font-weight-light: 400;
+  --body-font-weight-dark: 300;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --anchor: light-dark(var(--hyperlink), #A78BFA);
+    --divider-color: light-dark(var(--colors-limed-spruce-200), var(--colors-dark-slate-grey-800));
+    --body-font-weight: light-dark(400, 300);
+  }
 }
 
 //Gloabl Text Styles
