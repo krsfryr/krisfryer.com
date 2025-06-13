@@ -4,9 +4,10 @@ import { PortfolioService } from '../services/portfolio.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-work',
-  templateUrl: './work.component.html',
-  styleUrls: ['./work.component.scss']
+    selector: 'app-work',
+    templateUrl: './work.component.html',
+    styleUrls: ['./work.component.scss'],
+    standalone: false
 })
 export class WorkComponent {
   

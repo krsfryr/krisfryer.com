@@ -1,3 +1,6 @@
+@use './mixins' as m;
+@use './variables' as v;
+@use './typography' as t;
 
 .listing-hero {
     flex-direction: column;
@@ -6,42 +9,42 @@
 }
 
 .listing-text {
-    color: $gray-100;
-    background: $black;
+    color: v.$gray-100;
+    background: v.$black;
     padding-top: 13.2vmax;
     padding-bottom: 10vw;
-    
-    @include screen(md) {
+
+    @include m.screen(md) {
         padding-top: 10.2vmax;
         padding-bottom: 4vw;
     }
-    
+
     .listing-title {
-        max-width: $page-max-width;
+        max-width: t.$page-max-width;
         margin: auto;
         padding: 0 var(--p-lg);
 
-        @include screen(lg) {
+        @include m.screen(lg) {
             padding: 0 var(--p-xl);
         }
 
         h1 {
-            color: $gray-100;
-            font-size: $listing-title--mobile;
+            color: v.$gray-100;
+            font-size: t.$listing-title--mobile;
             font-weight: 600;
 
-            @include screen(md) {
-                font-size: $listing-title--desktop;
+            @include m.screen(md) {
+                font-size: t.$listing-title--desktop;
             }
-        }   
+        }
 
         .header-pre {
-            color: $gray-300;
+            color: v.$gray-300;
         }
     }
 
     .listing-intro {
-        max-width: $content-max-width;
+        max-width: t.$content-max-width;
 
         p {
             font-weight: 300;
@@ -61,11 +64,11 @@
             margin-bottom: 0;
 
             strong {
-                font-weight: 900;
+                font-weight: var(--font-weight--600);
             }
         }
 
-        @include screen(md) {
+        @include m.screen(md) {
             grid-auto-columns: max-content;
             grid-auto-flow: column;
             gap: 5rem;
@@ -77,7 +80,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 3.2rem;
-    max-width: $page-max-width;
+    max-width: t.$page-max-width;
     margin: auto;
     padding: 0 var(--p-lg);
 
@@ -87,8 +90,8 @@
         margin-top: 0;
         padding-top: 0;
     }
-    
-    @include screen(lg) {
+
+    @include m.screen(lg) {
         grid-template-columns: 1.15fr 1fr;
         padding: 0 var(--p-xl);
 
@@ -102,42 +105,42 @@
 
 .listing-intro {
     h1 {
-        color: $gray-100;
-        font-size: $listing-title--mobile;
+        color: v.$gray-100;
+        font-size: t.$listing-title--mobile;
         font-weight: 600;
 
-        @include screen(md) {
-            font-size: $listing-title--desktop;
+        @include m.screen(md) {
+            font-size: t.$listing-title--desktop;
         }
-    }  
+    }
 }
 
 .listing-image {
     max-width: 20rem;
     margin: 2rem auto 0;
     padding-top: 2rem;
-    
-    @include screen(sm) {
+
+    @include m.screen(sm) {
         max-width: 30rem;
     }
-    
-    @include screen(md) {
+
+    @include m.screen(md) {
         max-width: 115rem;
         padding-top: 5rem;
     }
-    
+
 }
 
 .listing-title {
     margin-bottom: 5rem;
 
     h1 {
-        font-size: $listing-title--mobile;
+        font-size: t.$listing-title--mobile;
 
-        @include screen(md) {
-            font-size: $listing-title--desktop;
+        @include m.screen(md) {
+            font-size: t.$listing-title--desktop;
         }
-    }  
+    }
 
     .header-pre {
         font-size: 1.3rem;
@@ -150,7 +153,7 @@
 
 
 .listing-section {
-    max-width: $page-max-width;
+    max-width: t.$page-max-width;
     margin: auto;
 }
 
@@ -160,15 +163,15 @@
 
 .listing-section, .listing-section-full {
 
-    @include all-headings {
-        max-width: $content-max-width;
+    @include m.all-headings {
+        max-width: t.$content-max-width;
     }
 
     h2 {
-        font-size: $listing-h2-mobile;
-        
-        @include screen(md) {
-            font-size: $listing-h2-desktop;
+        font-size: t.$listing-h2-mobile;
+
+        @include m.screen(md) {
+            font-size: t.$listing-h2-desktop;
         }
     }
 
@@ -177,7 +180,7 @@
         margin-top: calc(2* var(--global--spacing-vertical));
     }
 
-    
+
     .listing-role {
 
         .role-section {
@@ -185,11 +188,11 @@
         }
 
         h2 {
-            font-size: $h3-mobile;
+            font-size: t.$h3-mobile;
             margin-top: 0;
-            
-            @include screen(md) {
-                font-size: $h3-desktop;
+
+            @include m.screen(md) {
+                font-size: t.$h3-desktop;
             }
         }
 
@@ -205,13 +208,13 @@
     }
 
     .listing-software {
-        
+
         ul {
             display: flex;
             flex-direction: row;
             gap: 2rem;
         }
-        
+
         ul > li {
             display: flex;
             width: 100%;
@@ -223,7 +226,7 @@
     }
 
     p {
-        line-height: $line-height-default;
+        line-height: t.$line-height-default;
         margin-top: var(--global--spacing-vertical);
         margin-bottom: var(--global--spacing-vertical);
 
@@ -236,7 +239,7 @@
         }
     }
 
-    p + ul, 
+    p + ul,
     p + ol {
         margin-top: var(--p-lg);
     }
@@ -263,17 +266,17 @@ h2 + .listing-subsection {
 
     &.mp-tabs, &.col-spacing {
         h4, .h4
-        h4:first-child, 
+        h4:first-child,
         .h4:first-child {
             margin-top: revert;
 
         }
     }
-    
+
     img.img {
         padding: 2rem 0 3.2rem;
-        
-        @include screen(md) {
+
+        @include m.screen(md) {
             padding: 0;
         }
     }
@@ -284,10 +287,10 @@ h2 + .listing-subsection {
     grid-template-columns: repeat(1, 1fr);
     gap: 6rem;
 
-    @include screen(md) {
+    @include m.screen(md) {
         grid-template-columns: repeat(1, 1fr) 22rem;
         gap: 20.2rem;
-        
+
     }
 }
 
@@ -298,8 +301,8 @@ h2 + .listing-subsection {
     border-radius: 2rem;
     color: #002d71;
     box-shadow: var(--bs-box-shadow-sm);
-    
-    @include screen(md) {
+
+    @include m.screen(md) {
         gap: 3.6rem;
 
     }
@@ -314,7 +317,7 @@ h2 + .listing-subsection {
         width: .1rem;
         background-color: #99b4dd;
 
-        @include screen(md) {
+        @include m.screen(md) {
             display: block;
         }
     }
@@ -322,8 +325,8 @@ h2 + .listing-subsection {
     &-icon {
         display: none;
         fill: currentColor;
-        
-        @include screen(md) {
+
+        @include m.screen(md) {
             display:block;
             width: 4.8rem;
             height: 4.8rem;
@@ -335,25 +338,25 @@ h2 + .listing-subsection {
         font-size: 1.8rem;
         line-height: 1.75;
         font-weight: 700;
-        
-        @include screen(md) {
+
+        @include m.screen(md) {
             font-size: 2rem;
         }
     }
 }
 
 .takeaway {
-    
+
     &-visual {
         display: flex;
         justify-content: center;
         padding: 2rem;
     }
-    
+
     &-circle {
         width: 20rem;
         height: 20rem;
-        background: var(--bs-gray-300);
+        background: light-dark(var(--bs-gray-300), var(--bs-gray-800));
         border-radius: 100rem;
         padding: 5rem;
 
@@ -362,29 +365,29 @@ h2 + .listing-subsection {
 
 .listing-grid {
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
         'ga-title'
         'ga-image'
         'ga-body'
     ;
     grid-auto-rows: auto;
     gap: 0;
-    
-    @include screen(md) {
+
+    @include m.screen(md) {
         grid-template-columns: 1.35fr 1fr;
-        grid-template-areas: 
+        grid-template-areas:
             'ga-image ga-title'
             'ga-image ga-body'
         ;
         grid-auto-rows: auto 1fr;
         gap: 0 3.2rem;
-    
+
     }
 
     &.reversed {
-        @include screen(md) {
+        @include m.screen(md) {
             grid-template-columns: 1fr 1.35fr;
-            grid-template-areas: 
+            grid-template-areas:
                 'ga-title ga-image'
                 'ga-body ga-image'
             ;
@@ -403,7 +406,7 @@ h2 + .listing-subsection {
         grid-area: ga-body;
         padding-top: var(--p-md);
 
-        @include screen(md) {
+        @include m.screen(md) {
             padding-top: 0;
         }
     }

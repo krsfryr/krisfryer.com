@@ -1,4 +1,5 @@
-@import "/src/styles.scss";
+// @import "/src/styles.scss";
+@use 'mixins' as m;
 
 .project-card {
     display: grid;
@@ -11,7 +12,7 @@
     text-transform: lowercase;
     position: relative;
 
-    @include screen(md) {
+    @include m.screen(md) {
         grid-template-columns: 1fr 1fr;
         padding: var(--p-xl);
     }
@@ -20,8 +21,8 @@
         font-size: 2.4rem;
         font-weight: 700;
         margin-bottom: 1rem;
-        
-        @include screen(md) {
+
+        @include m.screen(md) {
             font-size: 3.2rem;
         }
     }
@@ -35,12 +36,12 @@
     .card-text {
         margin-bottom: 4rem;
         font-size: 1.8rem;
-        
-        @include screen(md) {
+
+        @include m.screen(md) {
             font-size: 2rem;
         }
     }
-    
+
     .tags {
         grid-area: tags;
         gap: var(--p-sm);
@@ -63,7 +64,7 @@
         background-position: 100% 100%;
         padding-bottom: 60%;
 
-        @include screen(md) {
+        @include m.screen(md) {
             padding-bottom: var(--p-xl);
         }
     }

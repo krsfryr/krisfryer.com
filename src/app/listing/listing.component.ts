@@ -4,9 +4,10 @@ import { Observable } from 'rxjs';
 import { Listing } from './models/Listing';
 
 @Component({
-  selector: 'app-listing',
-  templateUrl: './listing.component.html',
-  styleUrls: ['./listing.component.scss']
+    selector: 'app-listing',
+    templateUrl: './listing.component.html',
+    styleUrls: ['./listing.component.scss'],
+    standalone: false
 })
 export class ListingComponent implements OnInit {
   listings: Listing[] = [];

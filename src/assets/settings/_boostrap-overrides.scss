@@ -1,9 +1,38 @@
+@use "mixins" as m;
 
 .btn {
-    padding: 0.8rem 1.6rem;
+    padding: 0 0;
     font-size: 1.6rem;
-    border-radius: 0.6rem;
-    font-weight: 400;
+    border-radius: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: flex;
+    gap: 1.2rem;
+    transition: all .15s ease-in-out;
+    font-size: 1.4rem;
+
+    @include m.screen(sm) {
+        font-size: 1.6rem;
+    }
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    color: var(--anchor);
+    // background-color: var(--bs-btn-active-bg);
+    border-color: transparent;
+}
+
+.btn-default {
+    color: light-dark(var(--light-color), var(--dark-color));
+
+    &:hover {
+        color: var(--anchor);
+
+    }
 }
 
 .btn-primary {

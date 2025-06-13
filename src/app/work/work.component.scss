@@ -1,9 +1,11 @@
-@import "/src/styles.scss";
+// @import "/src/styles.scss";
+@use "mixins" as m;
+
 
 .projects {
     padding: 0 var(--p-lg) var(--p-lg);
 
-    @include screen(lg) {
+    @include m.screen(lg) {
         padding: 0 var(--p-xl) var(--p-xxl);
     }
 }
@@ -17,7 +19,7 @@
         grid-template-columns: 1fr;
         gap: 2.4rem;
 
-        @include screen(lg) {
+        @include m.screen(lg) {
             grid-template-columns: repeat(2, 1fr);
         }
     }

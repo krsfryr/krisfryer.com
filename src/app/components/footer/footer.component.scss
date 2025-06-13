@@ -1,4 +1,7 @@
-@import "/src/styles.scss";
+@use "../../../assets/settings/_variables" as *;
+@use "../../../assets/settings/mixins" as *;
+// @use "/src/styles.scss" as *;
+@use "mixins" as m;
 
 .grid {
     display: grid;
@@ -8,11 +11,12 @@
         'copyright'
     ;
     gap: .4rem 3.2rem;
-    font-size: 1.1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: -0.012rem;
     text-align: center;
+    color: light-dark(#000000b8, #ffffffb8);
 
-    @include screen(md) {
+    @include m.screen(md) {
         grid-template-columns: auto 1fr auto;
         grid-template-areas:
         'copyright built made'
@@ -23,6 +27,7 @@
 
 .copyright {
     grid-area: copyright;
+    color: light-dark(#0000008f, #ffffff8f);
 }
 
 .built {
@@ -52,13 +57,13 @@
     margin-left: .4rem;
 
     a {
-        color: var(--dk-gray);
+        color: var(--anchor);
     }
 
     a:hover .icon-social, a:focus .icon-social {
         color: var(--anchor);
     }
-    
+
     .icon-social {
         width: 1.4rem;
         height: 1.4rem;

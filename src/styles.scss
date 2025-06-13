@@ -1,18 +1,41 @@
 @use 'sass:color';
-@import url('//fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800;900&display=swap');
-@import 'app';
+@use 'app'  as *;
+@import url('//fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 html {
+    color-scheme: light dark;
     font-size: 62.5%;
     font-optical-sizing: auto;
+    font-feature-settings: "liga", "kern";
+    text-rendering: optimizeLegibility;
 }
 
+:root:has(#theme [value="☀️"]:checked) {
+    color-scheme: light;
+    --base: #cfcfcf;
+    --text: #212121;
+  }
+
+  :root:has(#theme [value="🌑"]:checked) {
+    color-scheme: dark;
+    --base: #212121;
+    --text: #cfcfcf;
+  }
+
+  :root:has(#theme [value="🙃"]:checked) {
+    --base: hotpink;
+    --text: dodgerblue;
+  }
+
 body {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    // font-family: "DM Sans", sans-serif;
     font-size: 1.6rem;
     letter-spacing: .025rem;
     line-height: var(--global--line-height-body);
+    background-color: light-dark(var(--light-bg), var(--dark-bg));
+    color: light-dark(var(--light-color), var(--dark-color));
+
 }
 
 main, footer, .footer {
@@ -22,7 +45,7 @@ main, footer, .footer {
 }
 
 footer, .footer {
-    padding: var(--p-sm) var(--p-lg);
+    padding: var(--p-sm) var(--p-md);
 
     @include screen(lg) {
         padding: var(--p-md) var(--p-xl);
@@ -34,11 +57,48 @@ footer, .footer {
     display: flex;
     align-items: center;
 
+    &.main {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        border-bottom: .1rem solid var(--divider-color);
+
+        p, h1 {
+            max-width: 50rem;
+        }
+
+        h1, .heading-pre {
+            text-transform: var(--uppercase);
+        }
+
+        h1 {
+            margin-top: 2rem;
+            margin-bottom: 1.6rem;
+            font-size: $h1-desktop;
+        }
+
+        p {
+            font-size: 1.8rem;
+            letter-spacing: 0.0196rem;
+        }
+    }
+
+    .hero-block {
+        padding: 6rem 0;
+    }
+
+    .heading-pre {
+        font-size: 1.4rem;
+        font-weight: var(--font-weight--600);
+        color: light-dark(var(--colors-french-beige-700), var(--colors-french-beige-500));
+
+    }
+
     h1 {
         max-width: 102.4rem;
         font-size: $h1-mobile;
     }
-    
+
     @include screen(lg) {
         padding: var(--p-xl) var(--p-xl);
 
@@ -50,6 +110,14 @@ footer, .footer {
 
 .section {
     padding: $global-section-padding--desktop;
+
+    &.main {
+        margin-top: var(--p-xl);
+
+        // h2 {
+        //     text-transform: var(--uppercase);
+        // }
+    }
 
     @include screen(lg) {
         padding: $global-section-padding--m-lg;
@@ -75,7 +143,8 @@ footer, .footer {
 
 .listing-section {
     padding: var(--p-xl) var(--p-lg);
-    
+
+
     @include screen(lg) {
         padding: var(--p-xl) var(--p-xl);
     }
@@ -84,10 +153,13 @@ footer, .footer {
 .listing-section-full {
     padding: var(--p-xl) 0;
 
+    &.bg-light {
+        background-color: light-dark(#f8f9fa, #000) !important;
+    }
     > .listing-section  {
         padding: 0 var(--p-lg);
     }
-    
+
     @include screen(lg) {
         padding: var(--p-xl) 0;
 
@@ -95,4 +167,11 @@ footer, .footer {
             padding: 0 var(--p-xl);
         }
     }
+}
+
+select {
+    border: .1rem solid light-dark(#E5E5E5, #404040);
+    background: light-dark(transparent, rgba(rgb(59, 59, 59), 0.2));
+    border-radius: 1.6rem;
+    padding: .2rem .8rem;
 }

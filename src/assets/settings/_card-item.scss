@@ -1,3 +1,7 @@
+@use './mixins' as m;
+@use './variables' as v;
+@use './typography' as t;
+
 .project-card {
     display: grid;
     grid-template-columns: 1fr;
@@ -15,7 +19,7 @@
         box-shadow: 0px 5px 40px -5px rgba(0, 0, 0, 0.11);
     }
 
-    @include screen(md) {
+    @include m.screen(md) {
         padding: var(--p-xl);
     }
 
@@ -27,8 +31,8 @@
         font-size: 2.4rem;
         font-weight: 700;
         margin-bottom: 1rem;
-        
-        @include screen(md) {
+
+        @include m.screen(md) {
             font-size: 3.2rem;
         }
     }
@@ -42,12 +46,12 @@
     .card-text {
         margin-bottom: 4rem;
         font-size: 1.8rem;
-        
-        @include screen(md) {
+
+        @include m.screen(md) {
             font-size: 2rem;
         }
     }
-    
+
     .tags {
         grid-area: tags;
         gap: var(--p-sm);
@@ -66,8 +70,8 @@
                 background: #c2d9dc;
             }
 
-            @include screen(lg) {
-                font-size: $body-font-size;
+            @include m.screen(lg) {
+                font-size: t.$body-font-size;
             }
         }
     }
@@ -84,7 +88,7 @@
             gap: var(--p-lg);
         }
 
-        @include screen(md) {
+        @include m.screen(md) {
 
             &.studio {
                 gap: var(--p-xl);

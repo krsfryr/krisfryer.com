@@ -1,31 +1,46 @@
-@import "/src/styles.scss";
+// @import "/src/styles.scss";
+@use 'mixins' as m;
+@use 'variables' as v;
 
+
+.bg-body {
+    background-color: light-dark(var(--light-bg), var(--dark-bg))!important;
+    color: light-dark(var(--black), var(--colors-french-beige-100));
+}
 nav.navbar {
     padding: var(--p-md) var(--p-lg)  0;
+    background-color: light-dark(var(--light-bg), var(--dark-bg));
 
     .container-fluid {
         padding-left: 0;
         padding-right: 0;
     }
 
-    @include screen(lg) {
+    @include m.screen(lg) {
         padding: var(--p-md) var(--p-xl) 0;
     }
 }
 .navbar-brand {
-    color: var(--dk-gray);
-    font-size: 2rem;
-    font-weight: 700;
+    // color: var(--dk-gray);
+    color: light-dark(var(--black), var(--colors-french-beige-100));
+    font-size: 1.6rem;
+    font-weight: 400;
     text-transform: lowercase;
     text-decoration: none;
 }
 
 .nav-link {
-    color: var(--dk-gray);
+    // color: var(--dk-gray);
+    color: light-dark(var(--black), var(--colors-french-beige-100));
     font-size: 1.4rem;
     font-weight: 400;
+    text-transform: lowercase;
 
-    @include screen(md) {
+    &.active, &.show {
+        color: light-dark(var(--black), var(--colors-french-beige-100));
+    }
+
+    @include m.screen(md) {
         font-size: 1.6rem;
     }
 }
@@ -33,11 +48,11 @@ nav.navbar {
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
     text-decoration: underline;
     text-underline-offset: .3rem;
-    
+
     &:hover {
         text-decoration: underline;
         text-decoration-style: dotted;
-        text-underline-offset: .3rem; 
+        text-underline-offset: .3rem;
     }
 }
 

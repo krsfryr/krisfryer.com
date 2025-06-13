@@ -1,149 +1,129 @@
-@import "/src/styles.scss";
+// File: about.component.scss
+@use 'mixins' as m;
+@use 'utilities' as u;
+@use 'typography' as t;
 
 $namespace: aboutme;
 
 [#{$namespace}].about-me {
     section {
-        display: grid;
-        border-top: 0;
         margin: var(--p-xl) var(--p-lg);
         padding: var(--p-md) 0 var(--p-lg);
-    
+        border-top: 0;
+        border-top-color: var(--about-divider-color);
+
+        @include u.section-grid();
+
+        @include m.screen(lg) {
+            margin: var(--p-xl) var(--p-xl);
+            border-top-style: solid;
+            border-top-width: 1px;
+        }
+
         .section-head {
-            display: grid;
+            @include m.flex-between;
             grid-template-columns: auto 1fr;
             margin: 0;
             gap: 0.8rem;
-            align-items: center;
-        }
-    
-        h2, .h2 {
-            font-size: $about-h2-desktop;
-            line-height: $line-height-default;
-            margin: 0;
-            
-            @include screen(md) {
-                font-size: $about-h2-desktop;
-            }
-        }
-        
-        h3, .h3 {
-            font-size: $about-h3-mobile;
-            line-height: $line-height-default;
-            
-            @include screen(md) {
-                font-size: $about-h3-desktop;
-            }
-        }
-    
-        @include screen(md) {
-            .section-head {
+
+            @include m.screen(md) {
                 margin: 2rem 0;
             }
-        }
-    
-        @include screen(lg) {
-            grid-template-columns: 20% 1fr;
-            border-top-style: solid;
-            border-top-width: 1px;
-            margin: var(--p-xl) var(--p-xl);
-    
-            .section-head {
+
+            @include m.screen(lg) {
                 display: unset;
                 grid-template-columns: unset;
             }
-    
-            .hr-inline {
+        }
+
+        h2,
+        .h2 {
+            margin: 0;
+            @extend %heading-h2;
+        }
+
+        h3,
+        .h3 {
+            @extend %heading-h3;
+        }
+
+        .hr-inline {
+            border-top-color: var(--about-divider-color);
+            width: 100%;
+
+            @include m.screen(lg) {
                 display: none;
             }
         }
     }
-    
+
     .subsection {
-        display: grid;
-        grid-template-columns: 1fr;
         margin: 3.2rem 0;
-    
-        h3, .h3 {
-            margin: 0;
-        }
-        
-        p:last-child {
-            margin-bottom: 0;
-        }
-    
-        @include screen(md) {
-            grid-template-columns: 25% 1fr;
-            gap: 1.6rem;
-        }
-    
-        @include screen(lg) {
-            margin: 2rem 0 .4rem;
+        border-top-color: var(--about-divider-color);
+
+        @include u.section-grid(25% 1fr);
+
+        @include m.screen(lg) {
+            margin: 2rem 0 0.4rem;
             padding-bottom: 3.2rem;
-    
+
             &:not(:first-child) {
                 border-top-style: solid;
                 border-top-width: 1px;
                 padding-top: 3.2rem;
             }
         }
-    }
-    
-    .text {
-        
-        .subsection {
-    
-            p {
-                max-width: 55rem;
-        
-                abbr {
-                    text-transform: unset;
-                }
-            }
+
+        h3,
+        .h3 {
+            margin: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
         }
     }
-    
-    .lists {
-        
-        .subsection-content {
-            ul {
-                width: 100%;
-                display: grid;
-                grid-template-columns: repeat(1, 1fr);
-                column-gap: 1.6rem;
-                margin-bottom: 0;
-    
-                
-                @include screen(lg) {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                @include screen(xxl) {
-                    grid-template-columns: repeat(3, 1fr);
-                }
-            }
-    
-            ul>* {
-    
-            }
-        }
-    
-        .li-sub {
-            display: block;
-            font-size: 85%;
-            opacity: 70%;
-            line-height: 1;
-            margin-bottom: 0.2rem;
-    
-            @include screen(lg) {
-                margin-bottom: 0;
-            }
+
+    .text .subsection p {
+        max-width: 55rem;
+
+        abbr {
+            text-transform: unset;
         }
     }
-    
+
+    .lists .subsection-content ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 1.6rem;
+        margin-bottom: 0;
+
+        @include m.screen(lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include m.screen(xxl) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .lists .li-sub {
+        display: block;
+        font-size: 85%;
+        opacity: 70%;
+        line-height: 1;
+        margin-bottom: 0.2rem;
+
+        @include m.screen(lg) {
+            margin-bottom: 0;
+        }
+    }
+
     .subsection-content {
         padding-left: 1.6rem;
-    
-        @include screen(lg) {
+
+        @include m.screen(lg) {
             padding-left: 0;
         }
     }
