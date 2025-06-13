@@ -1,3 +1,6 @@
+@use "mixins" as m;
+@use "variables" as v;
+
 .work-card {
     display: grid;
     grid-template-columns: 1fr;
@@ -19,7 +22,7 @@
     //     box-shadow: 0px 5px 40px -5px rgba(0, 0, 0, 0.11);
     // }
 
-    @include screen(sm) {
+    @include m.screen(sm) {
         grid-template-rows: max-content;
     }
 
@@ -59,7 +62,7 @@
         margin-bottom: 4rem;
         font-size: 1.8rem;
 
-        @include screen(md) {
+        @include m.screen(md) {
             font-size: 2rem;
         }
     }
@@ -87,7 +90,7 @@
         // padding: 1.6rem .8rem;
         padding: 3.6rem 0 0;
 
-        // @include screen(lg) {
+        // @include m.screen(lg) {
         //     padding: 2rem;
         // }
     }
@@ -97,6 +100,15 @@
         border-top: 0;
         margin-top: auto;
         padding: 2rem 0 0;
+
+        > a {
+            font-weight: 600;
+            width: max-content;
+        }
+    }
+
+    .btn-icon {
+        color: #C0C0C0;
     }
 
     .tags {
@@ -142,7 +154,7 @@
             gap: var(--p-lg);
         }
 
-        @include screen(md) {
+        @include m.screen(md) {
 
             &.studio {
                 gap: var(--p-xl);

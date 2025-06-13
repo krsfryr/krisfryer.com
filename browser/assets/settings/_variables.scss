@@ -188,61 +188,10 @@ $colors: (
   :root {
     --anchor: light-dark(var(--hyperlink), #A78BFA);
     --divider-color: light-dark(var(--colors-limed-spruce-200), var(--colors-dark-slate-grey-800));
+    --about-divider-color: light-dark(var(--black), #3b3b3b);
     --body-font-weight: light-dark(400, 300);
   }
 }
-
-//Gloabl Text Styles
-$page-max-width:                144rem;
-$content-max-width:             70rem;
-$body-font-size:                1.8rem;
-$line-height-default:           1.7;
-$line-height-default-mobile:    1.25;
-$headings-text-transform:       initial;
-
-//Main Text Styles
-$h1-desktop:                7rem;
-$h2-desktop:                4rem;
-$h3-desktop:                2.875rem;
-$h4-desktop:                2.4rem;
-$h5-desktop:                2rem;
-$h6-desktop:                2rem;
-
-$h1-mobile:                 4rem;
-$h2-mobile:                 3.2rem;
-$h3-mobile:                 2.3rem;
-$h4-mobile:                 1.92rem;
-$h5-mobile:                 1.6rem;
-$h6-mobile:                 1.6rem;
-
-$title-desktop:             $h4-desktop;
-$title-mobile:              $h4-mobile;
-$subtitle:                  $h5-desktop;
-
-$listing-title--desktop:      5.6rem;
-$listing-title--mobile:       $h1-mobile;
-
-
-//About Page
-$about-h1-desktop:                2.8rem;
-$about-h2-desktop:                2.2rem;
-$about-h3-desktop:                1.8rem;
-
-$about-h1-mobile:                 4.8rem;
-$about-h2-mobile:                 2rem;
-$about-h3-mobile:                 1.8rem;
-
-
-//Portfolio Listing Page
-$listing-h2-desktop:        $h2-desktop;
-$listing-h2-mobile:         $h2-mobile;
-
-$headings-pre-font-size:    1.6rem;
-
-
-$card-v2-border-radius:     .8rem;
-$card-v2-padding:           2.4rem;
-
 
 // Global Site Padding
 $global-padding--desktop:           0 var(--p-lg) var(--p-lg);

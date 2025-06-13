@@ -1,0 +1,11 @@
+@use "mixins" as m;
+
+// _utilities.scss
+@mixin section-grid($cols-lg: 20% 1fr) {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include m.screen(lg) {
+    grid-template-columns: #{$cols-lg};
+  }
+}

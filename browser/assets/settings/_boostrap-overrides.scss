@@ -1,3 +1,5 @@
+@use "mixins" as m;
+
 .btn {
     padding: 0 0;
     font-size: 1.6rem;
@@ -7,6 +9,11 @@
     display: flex;
     gap: 1.2rem;
     transition: all .15s ease-in-out;
+    font-size: 1.4rem;
+
+    @include m.screen(sm) {
+        font-size: 1.6rem;
+    }
 }
 
 .btn-check:checked+.btn,
