@@ -17,6 +17,9 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+$eerie-black: #1B1B1B;
+$snow: #FAF9F7;
+
 
 $blue:    #1F51FF !default;
 $indigo:  #6610f2 !default;
@@ -64,6 +67,11 @@ $colors: (
   --tag-brand: #e2e3e8;
   // --anchor: #1F51FF;
 
+  --eerie-black: #1B1B1B;
+  --snow: #FAF9F7;
+  --green-apple: #61C454;
+  --crayola-blue: #1570EF;
+
   --p-xxs: .4rem;
   --p-xs: .8rem;
   --p-sm: 1.2rem;
@@ -99,7 +107,7 @@ $colors: (
   --text-decoration-underline: underline;
 
   --global--line-height-page-title: 1.1;
-  --global--line-height-heading: 1.1;
+  --global--line-height-heading: 1.2;
   --quote--line-height-large: 1.2;
   --global--line-height-body: 1.6;
   --global--spacing-vertical: 3rem;
@@ -114,7 +122,8 @@ $colors: (
 
   // 2025 Updates - Dark Mode
   --light-bg: #fff;
-  --light-color: #1d1d1f;
+  --light-color: #535862;
+  --headings-text-color-light: #181d27;
 
   --dark-bg: #0F0F12;
   // --dark-color: #fff;
@@ -179,9 +188,116 @@ $colors: (
   --colors-mountbatten-pink-200: #eae5eb;
   --colors-mountbatten-pink-100: #f6f3f6;
 
+
   --body-font-weight: light-dark(400, 300);
   --body-font-weight-light: 400;
-  --body-font-weight-dark: 300;
+  --body-font-weight-dark: 400;
+
+  --text-transform-uppercase: uppercase;
+  --text-transform-lowercase: lowercase;
+  --text-transform-capitalize: capitalize;
+  --text-transform-none: none;
+
+
+  --white: white;
+  --gray25: #fdfdfd;
+  --gray50: #fafafa;
+  --gray100: whitesmoke;
+  --gray200: #e9eaeb;
+  --gray300: #d5d7da;
+  --gray400: #a4a7ae;
+  --gray500: #717680;
+  --gray600: #535862;
+  --gray700: #414651;
+  --gray900: #181d27;
+  --gray800: #252b37;
+
+  --success500: #12b76a;
+
+  // Primary (Elegant Blue)
+  // Used for CTAs, active elements, links
+  --primary25:  #f7faff;
+  --primary50:  #f0f6ff;
+  --primary100: #ddeaff;
+  --primary200: #c1dafe;
+  --primary300: #99c2fd;
+  --primary400: #6ea8fa;
+  --primary500: #4a91f1;
+  --primary600: #2973dc;
+  --primary700: #1e5cb9;
+  --primary800: #1b4c94;
+  --primary900: #183f78;
+
+  // Secondary (Elegant Purple)
+  // Used for alternate actions, highlights, or dark mode accents
+  --purple25:  #faf8ff;
+  --purple50:  #f4f0ff;
+  --purple100: #e6dbff;
+  --purple200: #d1bffb;
+  --purple300: #b799f5;
+  --purple400: #9e7ae9;
+  --purple500: #855fd8;
+  --purple600: #6f48c5;
+  --purple700: #5a3aa3;
+  --purple800: #482e84;
+  --purple900: #3a276a;
+
+  // Warm Neutrals (Inviting, Human, Editorial)
+  --neutral-warm0:    #ffffff;
+  --neutral-warm25:   #fbfaf9;
+  --neutral-warm50:   #f7f6f4;
+  --neutral-warm100:  #f2f1ef;   // Subtle off-white
+  --neutral-warm200:  #e4e2df;
+  --neutral-warm300:  #d2cfca;
+  --neutral-warm400:  #b1aca5;
+  --neutral-warm500:  #8f8a83;
+  --neutral-warm600:  #6f6a64;
+  --neutral-warm700:  #504d48;
+  --neutral-warm800:  #363431;
+  --neutral-warm900:  #1f1e1c;
+
+  // Cool Neutrals (Clean, Modern, Structural)
+  --neutral-cool0:    #ffffff;
+  --neutral-cool25:   #fcfcfd;
+  --neutral-cool50:   #f9fafb;
+  --neutral-cool100:  #f2f4f7;
+  --neutral-cool200:  #e4e7ec;
+  --neutral-cool300:  #d0d5dd;
+  --neutral-cool400:  #98a2b3;
+  --neutral-cool500:  #667085;
+  --neutral-cool600:  #475467;
+  --neutral-cool700:  #344054;
+  --neutral-cool800:  #1d2939;
+  --neutral-cool900:  #101828;
+
+  // Accent (Optional Gold / Success Accent)
+  --accent25:  #fffcf5;
+  --accent50:  #fef9ed;
+  --accent100: #fdf1d6;
+  --accent200: #fbe4b6;
+  --accent300: #f6d38a;
+  --accent400: #edb647;
+  --accent500: #d99c25;
+  --accent600: #b87f19;
+  --accent700: #946411;
+  --accent800: #7a510d;
+  --accent900: #64420b;
+
+  --dark-elevated25:  #f7f7f8;
+  --dark-elevated50:  #e6e6e8;
+  --dark-elevated100: #c4c4c7;
+  --dark-elevated200: #9f9fa3;
+  --dark-elevated300: #6e6e75;
+  --dark-elevated400: #3e3e45;
+  --dark-elevated500: #0f0f12;  /* Anchor */
+  --dark-elevated600: #0d0d10;
+  --dark-elevated700: #0b0b0d;
+  --dark-elevated800: #09090b;
+  --dark-elevated900: #060607;
+
+
+  // bootstrap overrides
+  --bs-gutter-x: 4.8rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -190,6 +306,8 @@ $colors: (
     --divider-color: light-dark(var(--colors-limed-spruce-200), var(--colors-dark-slate-grey-800));
     --about-divider-color: light-dark(var(--black), #3b3b3b);
     --body-font-weight: light-dark(400, 300);
+
+    --listing-hero-colors: light-dark(var(--headings-text-color-light), var(--colors-french-beige-100));
   }
 }
 

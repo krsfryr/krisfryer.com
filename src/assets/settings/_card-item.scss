@@ -72,6 +72,7 @@
 
             @include m.screen(lg) {
                 font-size: t.$body-font-size;
+                letter-spacing: t.$letter-spacing;
             }
         }
     }

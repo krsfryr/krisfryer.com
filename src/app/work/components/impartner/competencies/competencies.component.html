@@ -4,7 +4,7 @@
             <div class="listing-intro">
                 <h1>Competency Management</h1>
                 <div class="listing-intro">
-                    <p>Highlighting partner expertise is crucial for success, yet many PRM platforms lack tools for showcasing account-level achievements. As a UX/UI designer at Impartner, I created a Competency Management solution that allows administrators to define and display competencies like certifications and awards within the PRM platform.</p>
+                    <p>Aimed to fill a critical gap in PRM tools by enabling admins to define and display account-level competencies like certifications and awards, improving partner discoverability, segmentation, and visibility in the marketplace.</p>
                 </div>
                 <div class="block-wrapper">
                     <div class="block-content">
@@ -24,12 +24,12 @@
     </header>
     <div class="listing-section">
         <div class="listing-title">
-            <h2>Solution to Showcase Partner Achievements in PRM Platforms</h2>
+            <h2>The Problem</h2>
         </div>
         <div class="listing-details">
             <div class="listing-intro">
-                <p>In today's partner ecosystems, showcasing the strengths and expertise of partners is crucial for driving business success. However, many Partner Relationship Management (PRM) platforms lack the necessary tools to effectively represent partner achievements at the account level. As a UX/UI designer at Impartner, I was tasked with designing a Competency Management solution that would allow administrators to define and display account-level competencies, such as certifications, specialties, and awards, while seamlessly integrating these features into the broader PRM ecosystem.</p>
-                <p>This project not only aimed to address the gaps in existing tools but also to provide clients with a streamlined, flexible way to manage and present partner competencies, enabling better segmentation, improved partner discoverability, and more robust reporting. The result is a user-friendly interface that empowers PRM admins to enhance their partners' visibility and success within the marketplace.</p>
+                <p>Most PRM platforms only support individual-level achievements. This makes it hard for companies to showcase account-level expertise (e.g., a partner's certifications or accreditations), limiting visibility and competitive differentiation.</p>
+                <p>Admins also struggled with rigid tools that didn't support filtering, bulk editing, or integration across other PRM modules.</p>
             </div>
             <div class="listing-role">
                 <div class="role-section">
@@ -42,29 +42,30 @@
         </div>
     </div>
     <div class="listing-section">
-        <h2>Challenges</h2>
-        <div class="row">
-            <div class="col-sm-6">
-                <img src="../../assets/img/competencies/_puzzle-piece.svg" alt="" class="img-fluid br-1">
-                <h3 class="h4">Incomplete Competency Representation</h3>
-                <p>Current PRM tools only support user-level achievements like Journeys and Certifications, falling short in representing account-level competencies such as certifications, awards, and accreditations. This gap limits clients' ability to showcase partner expertise.</p>
-            </div>
-            <div class="col-sm-6">
-                <img src="../../assets/img/competencies/_gear.svg" alt="" class="img-fluid br-1">
-                <h3 class="h4">Limited Customization & Flexibility</h3>
-                <p>Existing solutions lack the flexibility to segment partners based on multiple competencies or integrate those competencies into features like Partner Marketplace, PCM tiers, and business planning. This limits admins' ability to create a personalized partner experience.</p>
-            </div>
-        </div>
-    </div>
-    <div class="listing-section">
-        <h3 class="h4">Problem Statement</h3>
+        <h3 class="h4">Design Challenge</h3>
         <div class="highlight">
             <div class="highlight-intro">
                 <svg class="highlight-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Pro 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.--><path d="M69.3 4C58.3-3.3 43.4-.3 36 10.7s-4.4 25.9 6.7 33.3l48 32c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L69.3 4zM597.3 44c11-7.4 14-22.3 6.7-33.3s-22.3-14-33.3-6.7l-48 32c-11 7.4-14 22.3-6.7 33.3s22.3 14 33.3 6.7l48-32zM24 160c-13.3 0-24 10.7-24 24s10.7 24 24 24l64 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-64 0zm528 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l64 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-64 0zM117.3 332c11-7.4 14-22.3 6.7-33.3s-22.3-14-33.3-6.7l-48 32c-11 7.4-14 22.3-6.7 33.3s22.3 14 33.3 6.7l48-32zm432-39.9c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l48 32c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3l-48-32zM448 176c0 27.2-8.4 52.3-22.8 72.9c-3.7 5.3-8 11.3-12.7 17.7c0 0 0 0 0 0s0 0 0 0s0 0 0 0s0 0 0 0c-12.9 17.7-28.3 38.9-39.8 59.8c-10.4 19-15.7 38.8-18.3 57.5l48.6 0c2.2-12 5.9-23.7 11.8-34.5c9.9-18 22.2-34.9 34.5-51.8c0 0 0 0 0 0s0 0 0 0s0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C496 78.8 417.2 0 320 0S144 78.8 144 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4c0 0 0 0 0 0s0 0 0 0c12.3 16.8 24.6 33.7 34.5 51.8c5.9 10.8 9.6 22.5 11.8 34.5l48.6 0c-2.6-18.7-7.9-38.6-18.3-57.5c-11.5-20.9-26.9-42.1-39.8-59.8c0 0 0 0 0 0s0 0 0 0c-4.7-6.4-9-12.4-12.8-17.7C200.4 228.3 192 203.2 192 176c0-70.7 57.3-128 128-128s128 57.3 128 128zm-176 0c0-26.5 21.5-48 48-48c8.8 0 16-7.2 16-16s-7.2-16-16-16c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16s16-7.2 16-16zM400 432l0-16-160 0 0 16c0 44.2 35.8 80 80 80s80-35.8 80-80z"/></svg>
             </div>
             <div class="highlight-divider"></div>
             <div class="highlight-content">
-                How might we enable PRM administrators to effectively manage and display account-level competencies in a flexible and customizable way that drives business success?
+                How might we enable PRM administrators to manage and display account-level competencies in a flexible, intuitive way without overwhelming the experience?
+            </div>
+        </div>
+    </div>
+    <div class="listing-section">
+        <h2>Challenges</h2>
+        <div class="row">
+            <div class="col-sm-6">
+                <img src="../../assets/img/competencies/_puzzle-piece.svg" alt="" class="img-fluid br-1">
+                <h3 class="h4">Incomplete Competency Representation</h3>
+                <p>Current PRM tools only support user-level achievements like Journeys and Certifications, falling short in representing account-level competencies such as certifications, awards, and accreditations. This gap limits clients' ability to showcase partner expertise.</p>
+                <div class="mobile-spacer-xl"></div>
+            </div>
+            <div class="col-sm-6">
+                <img src="../../assets/img/competencies/_gear.svg" alt="" class="img-fluid br-1">
+                <h3 class="h4">Limited Customization & Flexibility</h3>
+                <p>Existing solutions lack the flexibility to segment partners based on multiple competencies or integrate those competencies into features like Partner Marketplace, PCM tiers, and business planning. This limits admins' ability to create a personalized partner experience.</p>
             </div>
         </div>
     </div>
@@ -200,7 +201,7 @@
                     </div>
                     <div class="col-md-5">
                         <p>The available section lists all the badges that partners can earn. To visually distinguish it from the current section, we used a colored background and placed the badge images within a container to prevent any color conflicts.</p>
-                            
+
                         <p>To make it easy for partners to claim completed badges, we added an 'Add claim' button. Clicking this button opens a modal where the user must provide a description of their accomplishments and upload any supporting documentation. Once submitted, the badge will display a 'Pending approval' status. Once submitted, the user can also edit their claim if needed.</p>
                     </div>
                 </div>
@@ -218,6 +219,7 @@
                 </div>
                 <h3 class="h4">Balancing Functionality and Simplicity</h3>
                 <p>One of the biggest challenges in this project was ensuring the interface had all the necessary features without overwhelming the user. For instance, instead of using more complex options like dropdowns or toggles, we opted for a segmented control in the header to manage the competency status. This made it much easier for users to find and update key information while keeping the interface clean and intuitive.</p>
+                <div class="mobile-spacer-xl"></div>
             </div>
             <div class="col-sm-6">
                 <div class="takeaway-visual">

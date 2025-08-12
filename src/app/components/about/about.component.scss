@@ -6,6 +6,8 @@
 $namespace: aboutme;
 
 [#{$namespace}].about-me {
+    @include t.headings-with-scale(t.$fluid-scale--about);
+
     section {
         margin: var(--p-xl) var(--p-lg);
         padding: var(--p-md) 0 var(--p-lg);
@@ -38,13 +40,8 @@ $namespace: aboutme;
 
         h2,
         .h2 {
+            min-width: fit-content;
             margin: 0;
-            @extend %heading-h2;
-        }
-
-        h3,
-        .h3 {
-            @extend %heading-h3;
         }
 
         .hr-inline {
@@ -60,6 +57,7 @@ $namespace: aboutme;
     .subsection {
         margin: 3.2rem 0;
         border-top-color: var(--about-divider-color);
+        column-gap: 1.6rem;
 
         @include u.section-grid(25% 1fr);
 

@@ -3,6 +3,7 @@ export interface Listing {
     slug: string;
     // title "Marketplace Studio"
     // slug "marketplace-studio"
+    isFeatured?: boolean;
     title: string;
     subtitle: string;
     summary: string;

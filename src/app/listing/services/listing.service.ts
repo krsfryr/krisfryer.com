@@ -10,6 +10,7 @@ export class ListingService {
 	private projects: Listing[] = [
     {
 			slug: 'impartner-marketplace',
+      isFeatured: true,
       title: 'Impartner Marketplace',
       subtitle: 'Impartner',
       summary: 'This is a sample summary description.',
@@ -17,8 +18,8 @@ export class ListingService {
       link: 'work/impartner-marketplace',
       tags: ['Figma', 'MVP Design', 'Protyping', 'HTML', 'CSS', 'Mobile'],
       tagColor: 'tag-studio',
-      pictures: ['../../assets/img/marketplace/mps-01.png'],
-      cardColor: 'bg-studio',			
+      pictures: ['../../assets/img/marketplace/v3/_capsule-mp-15x10.png'],
+      cardColor: 'bg-studio',
     },
     {
 			slug: 'competency-management',
@@ -49,5 +50,5 @@ export class ListingService {
 	GetListings(top: number = 5): Observable<Listing[]> {
 		return new BehaviorSubject<Listing[]>(this.projects.slice(0, 5)).asObservable();
 	}
-	
+
 }

@@ -1,6 +1,5 @@
 @use "../../../assets/settings/_variables" as *;
 @use "../../../assets/settings/mixins" as *;
-// @use "/src/styles.scss" as *;
 @use "mixins" as m;
 
 .grid {
@@ -33,10 +32,6 @@
 .built {
     grid-area: built;
     text-align: center;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // gap: .4rem;
 }
 
 .made {

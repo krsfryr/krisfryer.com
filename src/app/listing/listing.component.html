@@ -1,48 +1,17 @@
-<div class="padding-global">
+<div class="padding-global my-work-wrapper">
 	<div class="grid grid-2-col">
 		@for (l of listings; track $index) {
 			<div class="card work-card {{l.cardColor}}">
 				<div class="card-img-wrapper">
-					<a href="{{l.link}}">
 						<img src="{{l.pictures}}" class="img-fluid" alt="...">
-					</a>
 				</div>
 				<div class="card-body">
-					<!-- <div class="card-pre-title">{{l.subtitle}}</div> -->
 					<h2 class="card-title">
-						<a href="{{l.link}}">
 							{{l.title}}
-						</a>
 					</h2>
 					<p class="card-description">{{l.description}}</p>
-					<!-- <div class="tags d-flex flex-wrap">
-						@for (tag of l.tags; track tag) {
-							<div class="tag {{l.tagColor}}">{{tag}}</div>
-						}
-					</div> -->
 				</div>
-				<div class="card-footer">
-					<a href="{{l.link}}" class="btn btn-default">
-						View Project
-						<span class="btn-icon">
-							<svg width="22px" height="10px" viewBox="0 0 22 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<title>Path</title>
-								<g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-									<g id="Artboard" transform="translate(-1248.000000, -3718.000000)" fill="currentcolor">
-										<g id="Events" transform="translate(130.000000, 3595.000000)">
-											<g id="Group-17" transform="translate(0.000000, 94.000000)">
-												<g id="Group-4" transform="translate(1025.000000, 25.000000)">
-													<polygon id="Path" points="115 9 109 4 109 8 93 8 93 10 109 10 109 14"></polygon>
-												</g>
-											</g>
-										</g>
-									</g>
-								</g>
-							</svg>
-						</span>
-					</a>
-				</div>
-				<!-- <a class="project-link" href="{{l.link}}"></a> -->
+				<a class="project-link" href="{{l.link}}"></a>
 			</div>
 		}
 	</div>

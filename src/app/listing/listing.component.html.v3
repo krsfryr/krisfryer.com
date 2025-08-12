@@ -1,0 +1,79 @@
+<!-- <div class="padding-global my-work-wrapper">
+  <div class="wrapper_card-blur">
+    <div class="gradient-bg--home"></div>
+
+    <div class="grid grid-2-col mw-site">
+      @for (l of listings; track $index) {
+        <div class="card work-card work-card_v2 {{ l.cardColor }}" [ngClass]="{ 'is-featured': $index === 0 }">
+          <a class="card-link" [href]="l.link" [attr.aria-label]="'View ' + l.title"></a>
+
+          <div class="card-img-wrapper">
+            @if (l.pictures?.length) {
+              <img [src]="l.pictures[0]" class="img-fluid" [alt]="l.title" loading="lazy" />
+            } @else {
+              <div class="img-fluid" aria-hidden="true"></div>
+            }
+          </div>
+
+          <div class="card-body">
+            <h2 class="card-title">{{ l.title }}</h2>
+            <p class="card-description">{{ l.description }}</p>
+          </div>
+
+          <div class="card-footer">
+            <span class="btn btn-default" aria-hidden="true">View Project</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div> -->
+
+
+<div class="padding-global my-work-wrapper">
+  <div class="wrapper_card-blur">
+    <div class="gradient-bg--home"></div>
+
+    <div class="mw-site cards-grid">
+      @for (l of listings; track $index) {
+        <div
+          class="card work-card work-card_v2 {{ l.cardColor }}"
+          [ngClass]="{
+            'is-featured': $index === 0,
+			'sbs': $index === 1 || $index === 2,
+            'slot-1': $index === 1,
+            'slot-2': $index === 2
+          }"
+        >
+		<div class="card__bg {{ l.cardColor }}"
+          [ngClass]="{
+            'is-featured': $index === 0,
+			'not-featured': $index === 1 || $index === 2,
+            'slot-1': $index === 1,
+            'slot-2': $index === 2
+          }"
+        ></div>
+          <!-- full-card link -->
+          <a class="card-link" [href]="l.link" [attr.aria-label]="'View ' + l.title"></a>
+
+          <div class="card-img-wrapper">
+            @if (l.pictures?.length) {
+              <img [src]="l.pictures[0]" class="img-fluid" [alt]="l.title" loading="lazy" />
+            } @else {
+              <div class="img-fluid" aria-hidden="true"></div>
+            }
+          </div>
+
+          <div class="card-body">
+            <h2 class="card-title">{{ l.title }}</h2>
+            <p class="card-description">{{ l.description }}</p>
+          </div>
+
+          <div class="card-footer">
+            <span class="btn btn-default" aria-hidden="true">View Project</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

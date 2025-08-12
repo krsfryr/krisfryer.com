@@ -1,5 +1,7 @@
 @use 'sass:color';
 @use 'app'  as *;
+@use 'typography' as t;
+@use 'variables' as v;
 @import url('//fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 html {
@@ -29,19 +31,32 @@ html {
 
 body {
     font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-    // font-family: "DM Sans", sans-serif;
     font-size: 1.6rem;
     letter-spacing: .025rem;
     line-height: var(--global--line-height-body);
-    background-color: light-dark(var(--light-bg), var(--dark-bg));
     color: light-dark(var(--light-color), var(--dark-color));
-
+    background-color: light-dark(var(--light-bg), var(--dark-bg));
 }
 
 main, footer, .footer {
     width: 100%;
     margin: 0 auto;
-    max-width: 168rem;
+}
+
+.mw-site {
+    margin: auto;
+    max-width: 144rem;
+}
+
+.mw-inner {
+    max-width: 144rem;
+    margin: auto;
+    padding: inherit var(--p-lg);
+
+
+    @include screen(lg) {
+        padding: inherit var(--p-xl);
+    }
 }
 
 footer, .footer {
@@ -74,7 +89,7 @@ footer, .footer {
         h1 {
             margin-top: 2rem;
             margin-bottom: 1.6rem;
-            font-size: $h1-desktop;
+            @extend %h1;
         }
 
         p {
@@ -96,7 +111,7 @@ footer, .footer {
 
     h1 {
         max-width: 102.4rem;
-        font-size: $h1-mobile;
+        @extend %h1;
     }
 
     @include screen(lg) {
@@ -113,10 +128,6 @@ footer, .footer {
 
     &.main {
         margin-top: var(--p-xl);
-
-        // h2 {
-        //     text-transform: var(--uppercase);
-        // }
     }
 
     @include screen(lg) {
@@ -146,7 +157,7 @@ footer, .footer {
 
 
     @include screen(lg) {
-        padding: var(--p-xl) var(--p-xl);
+        padding: var(--p-xxl) var(--p-xl);
     }
 }
 
@@ -167,6 +178,15 @@ footer, .footer {
             padding: 0 var(--p-xl);
         }
     }
+}
+
+.headline {
+    font-size: t.$body-font-size-sm;
+    letter-spacing: t.$letter-spacing;
+    text-transform: var(--text-transform-uppercase);
+    font-weight: t.$font-weight-medium;
+    margin-bottom: 1.6rem;
+    color: light-dark(v.$gray-700, v.$gray-500);
 }
 
 select {

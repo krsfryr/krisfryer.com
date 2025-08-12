@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "mixins" as m;
 
 .btn {
@@ -22,7 +23,6 @@
 .btn:first-child:active,
 :not(.btn-check)+.btn:active {
     color: var(--anchor);
-    // background-color: var(--bs-btn-active-bg);
     border-color: transparent;
 }
 
@@ -51,4 +51,14 @@
 
 .card-body {
     padding: 2rem;
+}
+
+.row {
+    --bs-gutter-x: 4.8rem;
+}
+
+.blockquote {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 140%;
 }
