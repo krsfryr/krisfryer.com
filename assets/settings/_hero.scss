@@ -1,0 +1,138 @@
+@use './mixins' as m;
+@use 'typography' as t;
+@use 'variables' as v;
+
+.hero-v2 {
+    padding: var(--p-xl) var(--p-lg);
+    display: flex;
+    align-items: center;
+
+    &.main {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        h1 {
+            margin: 2rem auto 1.6rem;
+            @extend %h1;
+        }
+
+        p {
+            font-size: 2rem;
+            letter-spacing: 0.0196rem;
+            width: 100%;
+            max-width: 50rem;
+            margin: 0 auto 1rem;
+        }
+
+        .alert {
+            max-width: 80rem;
+            margin: 2rem auto 1rem;
+        }
+
+        .subtle-note {
+            font-size: 1.3rem;
+            text-align: center;
+            max-width: 65rem;
+            margin: 2rem auto 1rem;
+        }
+    }
+
+    .hero {
+
+        &__bg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90vw;
+            max-width: 1400px;
+            height: 100%;
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            filter: blur(8px);
+            z-index: 0;
+            padding: 6rem;
+            margin-top: 10rem;
+            opacity: 0.75; // default (light)
+
+            // Light mode
+            [data-theme='light'] & {
+                background-image:
+                    linear-gradient(180deg, transparent, #fff 90%),
+                    url('/assets/img/hero/mp-studio-header-v2@2x.png');
+                opacity: 0.75;
+            }
+
+            // Dark mode
+            [data-theme='dark'] & {
+                background-image:
+                    linear-gradient(180deg, transparent, #0F0F12 90%),
+                    url('/assets/img/hero/mp-studio-header-v2@2x.png');
+                opacity: 0.25;
+            }
+
+            // Optional fallback if no theme is set
+            html:not([data-theme]) & {
+                background-image:
+                    linear-gradient(180deg, transparent, #fff 90%),
+                    url('/assets/img/hero/mp-studio-header-v2@2x.png');
+            }
+        }
+
+        &__gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+            linear-gradient(
+                light-dark(rgba(#ffffff, .3), rgba(#0F0F12, .3)),
+                light-dark(rgba(#ffffff, .5), rgba(#0F0F12, .5)));
+
+            z-index: 1;
+        }
+    }
+
+    .hero-block {
+        padding: 6rem 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .heading-pre {
+        font-size: 1.4rem;
+        font-weight: var(--font-weight--600);
+        color: light-dark(var(--colors-french-beige-700), var(--colors-french-beige-500));
+
+    }
+
+    h1 {
+        max-width: 102.4rem;
+        @extend %h1;
+    }
+
+    @include m.screen(lg) {
+        padding: var(--p-xl) var(--p-xl);
+
+        h1 {
+            font-size: 5.2rem;
+        }
+    }
+}
+
+.my-work-wrapper {
+    background:
+    linear-gradient(
+        light-dark(rgba(255, 255, 255), #0F0F12),
+        light-dark(rgba(255, 255, 255), #0F0F12));
+}

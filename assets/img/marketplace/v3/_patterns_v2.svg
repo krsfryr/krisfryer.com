@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 115">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #aa9aff;
+      }
+
+      .cls-2 {
+        fill: #aec7ff;
+      }
+
+      .cls-3 {
+        fill: #578dfe;
+      }
+
+      .cls-4 {
+        fill: #ded5ff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-4" x="0" y="0" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-3" x="30" y="0" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-2" x="90" y="0" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-1" x="0" y="30" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-2" x="60" y="30" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-4" x="90" y="30" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-1" x="30" y="60" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-3" x="60" y="60" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-2" x="0" y="90" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-4" x="30" y="90" width="25" height="25" rx="12.5" ry="12.5"/>
+      <rect class="cls-3" x="90" y="90" width="25" height="25" rx="12.5" ry="12.5"/>
+    </g>
+  </g>
+</svg>

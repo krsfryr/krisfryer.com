@@ -1,44 +1,64 @@
 // Media Queries
 @mixin screen($breakpoint) {
-    @if($breakpoint == xxl)  {
-      @media (min-width: 1400px) { @content }
-    }
-    @if($breakpoint == xl)  {
-      @media (min-width: 1200px) { @content }
-    }
-    @if($breakpoint == lg)  {
-      @media (min-width: 992px) { @content }
-    }
-    @if($breakpoint == md)  {
-      @media (min-width: 768px) { @content }
-    }
-    @if($breakpoint == sm)  {
-      @media (min-width: 576px) { @content }
-    }
-  };
+  @if($breakpoint == xxl) {
+    @media (min-width: 1400px) { @content; }
+  }
+  @if($breakpoint == xl) {
+    @media (min-width: 1200px) { @content; }
+  }
+  @if($breakpoint == lg2) {
+    @media (min-width: 1100px) { @content; }
+  }
+  @if($breakpoint == lg) {
+    @media (min-width: 992px) { @content; }
+  }
+  @if($breakpoint == md2) {
+    @media (min-width: 865px) { @content; }
+  }
+  @if($breakpoint == md) {
+    @media (min-width: 768px) { @content; }
+  }
+  @if($breakpoint == sm) {
+    @media (min-width: 576px) { @content; }
+  }
+}
+
+// Fluid Typography
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-font, $max-font, $min-vw: 32rem, $max-vw: 144rem) {
+  font-size: clamp(
+    #{$min-font},
+    calc(#{$min-font} + (#{strip-unit($max-font)} - #{strip-unit($min-font)}) * ((100vw - #{$min-vw}) / (#{strip-unit($max-vw)} - #{strip-unit($min-vw)}))),
+    #{$max-font}
+  );
+}
 
 // Headings
 @mixin all-headings {
-    @for $index from 1 through 6 {
-        h#{$index}, .h#{$index} {
-            @content;
-        }
+  @for $index from 1 through 6 {
+    h#{$index},
+    .h#{$index} {
+      @content;
     }
+  }
 };
 
 // Colors
 $bg-colors: (
-  zinc-50:     #FAFAFA,
-  zinc-100:    #F4F4F5,
-  zinc-200:    #E4E4E7,
-  zinc-300:    #D4D4D8,
-  zinc-400:    #A1A1AA,
-  zinc-500:    #71717A,
-  zinc-600:    #52525B,
-  zinc-700:    #3F3F46,
-  zinc-800:    #27272A,
-  zinc-900:    #18181B,
-  zinc-950:    #0A0A0A,
+  zinc-50: #FAFAFA,
+  zinc-100: #F4F4F5,
+  zinc-200: #E4E4E7,
+  zinc-300: #D4D4D8,
+  zinc-400: #A1A1AA,
+  zinc-500: #71717A,
+  zinc-600: #52525B,
+  zinc-700: #3F3F46,
+  zinc-800: #27272A,
+  zinc-900: #18181B,
+  zinc-950: #0A0A0A,
 );
 
 @mixin background-colors {
@@ -50,10 +70,9 @@ $bg-colors: (
 }
 
 @function set-text-color($color) {
-  @if (lightness( $color ) > 50) {
+  @if (lightness($color) > 50) {
     @return #000; // lighter color, return black
-  }
-  @else {
+  } @else {
     @return #fff; // darker color, return white
   }
 }
